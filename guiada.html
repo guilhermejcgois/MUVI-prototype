@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MUVI - Home</title>
+        <style>
+        html, body {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            position: relative;
+            width: 100%;
+            background-color: #eee;
+            overflow: hidden;
+        }
+            body > section {
+                border: solid black 1px;
+                height: 100%;
+            }
+            nav {
+                margin-top: 
+            }
+            ul {
+                list-style: none;
+            }
+            nav.nav-navigation ul {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            nav.nav-navigation ul li {
+                display: inline-block;
+            }
+            nav.nav-navigation li div {
+                border: solid #ccc 1px;
+                width: 50px;
+                height: 30px;
+                padding-top: 10px;
+            }
+            nav.nav-navigation li div:not(.nav-sce-location):hover {
+                background-color: #ddd;
+                cursor: pointer;
+            }
+            nav.nav-navigation li div.nav-sce-location {
+                width: 100px;
+            }
+            img {
+                position: absolute;
+                top: 17%;
+                left: 47%;
+            }
+            article > section {
+                position: absolute;
+                top: 23%;
+                margin-left: 5%;
+                padding-left: 3%;
+                width: 38%;
+                height: 73%;
+                background-color: rgba(127, 127, 127, 0.3);
+                border-radius: 5px;
+            }
+            section header {
+                height: 10%;
+            }
+            section header h1 {
+                font-size: 24px;
+                margin: 15px 0px 5px 0px;
+            }
+            section article div {
+                position: absolute;
+                overflow-y: scroll;
+                margin-right: 7%;
+                height: 60%;
+            }
+            section article a {
+                position: absolute;
+                margin-top: 48%;
+            }
+            section footer {
+                margin-top: 58%;
+                width: 92%;
+                height: 17%;
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 3px;
+            }
+            section footer div {
+                height: 15%;
+                width: 84%;
+                padding: 1%;
+            }
+            .hide {
+                display: none;
+            }
+            .hide-li div {
+                border-width: 0;
+                color: #eee;
+            }
+            .hide-li div:not(.nav-sce-location):hover {
+                background-color: #eee;
+                cursor: default;
+            }
+        </style>
+
+        <style type="text/css">
+            section#menu {
+                background-color: gray;
+            }
+            section#menu section {
+                border: solid black 1px;
+                width: 0;
+                z-index: 10;
+            }
+            section#menu-section.show-transition {
+                width: 350px;
+                transition: width 1s;
+            }
+            section#menu-section>header,
+            section#menu-section>article,
+            section#menu-section>footer,
+            div#modal-div {
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 1s linear;
+                z-index: 9;
+            }
+            section#menu-section>header.show-transition,
+            section#menu-section>article.show-transition,
+            section#menu-section>footer.show-transition,
+            div#modal-div.show-transition {
+                visibility: visible;
+                opacity: 1;
+                transition: background-color 1s linear;
+            }
+            section#menu section, section#menu div {
+                position: absolute;
+                height: 100%;
+            }
+            div#openclose-div {
+                width: 130px;
+                transition: margin-left 1s;
+                z-index: 10;
+            }
+            div#openclose-div.opened {
+                margin-left: 350px;
+                transition: margin-left 1s;
+            }
+            div#openclose-div input {
+                border: none;
+                width: 130px;
+                font-size: 30px;
+                text-align: right;
+                margin-top: 1px;
+                background-image: url('glyphicons-159-show-lines.png');
+                background-position: left;
+                background-repeat: no-repeat;
+            }
+            div#openclose-div input.opened {
+                background-image: url('glyphicons-208-remove-2.png');
+            }             
+            div#modal-div {
+                background-color: rgba(0, 0, 0, 0.9);
+                transition: background-color 1s linear;
+                width: 100%;
+            }
+            section#menu-section {
+                background-color: #aaa;
+            }
+            section#menu-section header {
+                background-color: white;
+                height: 150px;
+                padding: 10px 50px;
+            }
+            section#menu-section header img {
+                position: inherit;
+            }
+            section#menu-section article {
+                z-index: 99;
+                height: calc(100% - 150px - 170px);
+            }
+            section#menu-section footer {
+                background-color: #777;
+                height: 150px;
+                width: inherit;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <section id="menu">
+            <section id="menu-section">
+                <header>
+                    <img src="logo.jpe" />
+                </header>
+                <article>
+                    <nav>
+                        <ul>
+                            <li>Cenários</li>
+                            <li><ul>
+                                <li>Cenário Ex. 1</li>
+                                <li><ul>
+                                    <li>Como tudo começou</li>
+                                    <li>A tropa</li>
+                                    <li>O traje</li>
+                                </ul></li>
+                                <li>Cenário Ex. 2</li>
+                                <li><ul>
+                                    <li>Como tudo começou</li>
+                                    <li>A tropa</li>
+                                    <li>O traje</li>
+                                </ul></li>
+                            </ul></li>
+                        </ul>
+                    </nav>
+                </article>
+                <footer>
+                    <ul>
+                        <li>Sobre</li>
+                        <li><ul>
+                            <li>O projeto</li>
+                            <li>O munseu</li>
+                            <li>A equipe</li>
+                        </ul></li>
+                    </ul>
+                </footer>
+            </section>
+            <div id="openclose-div">
+                <input id="menu-btn" type="button" value="MENU" />
+            </div>
+            <div id="modal-div"></div>
+        </section>
+
+
+
+
+
+
+        <section id="obj1">
+            <nav class="nav-navigation">
+                <ul>
+                    <li class="hide-li"><div><a class="nav-sce-btn">&lt;</a></div></li>
+                    <li><div class="nav-sce-location">1 de 3</div></li>
+                    <li><div id="goto2"><a class="nav-sce-btn">&gt;</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                <header>
+                    <h1>Como tudo Começou</h1>
+                </header>
+                <article>
+                    <div>
+Antigamente não existiam carros, ônibus ou caminhões. As viagens eram feitas a pé e as cargas e pessoal eram transportadas nas costas dos escravos índios e negros.
+As poucas cidades viviam isoladas, com dificuldades para adquirir alimentos e outros produtos
+de fora e também dificuldades para transportar o que produziam.
+Foi nessa época no final do século XVII, que surgiram os tropeiros.
+                    </div>
+                    <a href="#">Para saber mais...</a>
+                </article>
+                <footer>
+                    <div>lalala</div>
+                </footer>
+                </section>
+                <img src="sala troperismo.jpg"></img>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section id="obj2" class="hide">
+            <input type="button" value="MENU" />
+            <nav class="nav-navigation">
+                <ul>
+                    <li><div id="backto1"><a class="nav-sce-btn"></a>&lt;</div></li>
+                    <li><div class="nav-sce-location">2 de 3</div></li>
+                    <li><div id="goto3"><a class="nav-sce-btn">&gt;</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                <header>
+                    <h1>Como tudo Começou</h1>
+                </header>
+                <article>
+                    <div>
+Antigamente não existiam carros, ônibus ou caminhões. As viagens eram feitas a pé e as cargas e pessoal eram transportadas nas costas dos escravos índios e negros.
+As poucas cidades viviam isoladas, com dificuldades para adquirir alimentos e outros produtos
+de fora e também dificuldades para transportar o que produziam.
+Foi nessa época no final do século XVII, que surgiram os tropeiros.
+                    </div>
+                    <a href="#">Para saber mais...</a>
+                </article>
+                <footer>
+                    <div>lalala</div>
+                </footer>
+                </section>
+                <img src="a tropa.jpg"></img>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+        <section id="obj3" class="hide">
+            <input type="button" value="MENU" />
+            <nav class="nav-navigation">
+                <ul>
+                    <li><div id="backto2"><a class="nav-sce-btn"></a>&lt;</div></li>
+                    <li><div class="nav-sce-location">3 de 3</div></li>
+                    <li class="hide-li"><div><a class="nav-sce-btn">&gt;</a></div></li>
+                </ul>
+            </nav>
+            <article>
+                <section>
+                <header>
+                    <h1>Como tudo Começou</h1>
+                </header>
+                <article>
+                    <div>
+Antigamente não existiam carros, ônibus ou caminhões. As viagens eram feitas a pé e as cargas e pessoal eram transportadas nas costas dos escravos índios e negros.
+As poucas cidades viviam isoladas, com dificuldades para adquirir alimentos e outros produtos
+de fora e também dificuldades para transportar o que produziam.
+Foi nessa época no final do século XVII, que surgiram os tropeiros.
+                    </div>
+                    <a href="#">Para saber mais...</a>
+                </article>
+                <footer>
+                    <div>lalala</div>
+                </footer>
+                </section>
+                <img src="traje.jpg"></img>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+        (function () {
+            function addClass(object, className) {
+                object.className = object.className + " " + className;
+            }
+            function removeClass(object, className) {
+                object.className = object.className.replace(className, "");
+            }
+            function gofromto(from, to) {
+                addClass(from, "hide");
+                removeClass(to, "hide");
+            }
+            function controlMenu(event) {
+                var openCloseDiv = document.getElementById('openclose-div');
+                var modalDiv = document.getElementById('modal-div');
+                var menuBtn = document.getElementById('menu-btn');
+                var menuSection = document.getElementById('menu-section');
+
+                if (menuBtn.className.search("opened") == -1) {
+                    addClass(openCloseDiv, "opened");
+                    addClass(menuBtn, "opened");
+                    addClass(modalDiv, "show-transition");
+                    addClass(menuSection, "show-transition");
+                    addClass(menuSection.children[0], "show-transition");
+                    addClass(menuSection.children[1], "show-transition");
+                    addClass(menuSection.children[2], "show-transition");
+                } else {
+                    removeClass(openCloseDiv, "opened");
+                    removeClass(menuBtn, "opened");
+                    removeClass(modalDiv, "show-transition");
+                    removeClass(menuSection, "show-transition");
+                    removeClass(menuSection.children[0], "show-transition");
+                    removeClass(menuSection.children[1], "show-transition");
+                    removeClass(menuSection.children[2], "show-transition");
+                }
+            }
+
+            document.getElementById('goto2').addEventListener("click", function (event) {
+                gofromto('obj1', 'obj2');
+            });
+
+            document.getElementById('goto3').addEventListener("click", function (event) {
+                gofromto('obj2', 'obj3');
+            });
+
+            document.getElementById('backto1').addEventListener("click", function (event) {
+                gofromto('obj2', 'obj1');
+            });
+
+            document.getElementById('backto2').addEventListener("click", function (event) {
+                gofromto('obj3', 'obj2');
+            });
+
+            document.getElementById('menu-btn').addEventListener("click", controlMenu);
+
+            document.getElementById('modal-div').addEventListener("click", controlMenu  );
+        })();
+        </script>
+    </body>
+</html>
