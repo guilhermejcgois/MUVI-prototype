@@ -733,6 +733,7 @@
             document.getElementById('menu-li2').addEventListener("click", controlCenarios);
 
             document.addEventListener("keypress", function (event) {
+                if (!containClass(document.getElementById('menu-btn'), "opened"))
                 switch (event.keyCode) {
                     case 37: // left
                         if (!containClass(document.getElementById('dsf2'), "hide"))

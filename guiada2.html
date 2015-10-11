@@ -350,7 +350,7 @@
                         <a class="amore" href="#">Para saber mais...</a>
                     </article>
                     <footer class="hide">
-                        <div>lalala</div>
+                        <div>Ao longo das rotas pelas quais se deslocavam, ajudaram a fazer brotar várias das atuais cidades do Brasil. As cidades de Taubaté, Sorocaba, Viamão, Santana de Parnaíba, Castro, Cruz Alta e São Vicente são algumas das pioneiras que se destacaram pela atividade de seus tropeiros.</div>
                     </footer>
                 </section>
                 <img src="Mapa tropeiro.jpg"></img>
@@ -385,7 +385,7 @@
                         <a class="amore" href="#">Para saber mais...</a>
                     </article>
                     <footer class="hide">
-                        <div>lalala</div>
+                        <div>Um dos marcos iniciais do tropeirismo foi quando a Coroa Portuguesa instalou, em 1695, na Vila de Taubaté, a Casa de Fundição de Taubaté, também chamada de Oficina Real dos Quintos. A partir de então, todo o ouro extraído das Minas Gerais deveria ser levado a esta Vila e, de lá, seguia para o porto de Parati, de onde era encaminhado para o reino via cidade do Rio de Janeiro.</div>
                     </footer>
                 </section>
                 <img src="pouso.jpg"></img>
@@ -422,7 +422,7 @@
                         <a class="amore" href="#">Para saber mais...</a>
                     </article>
                     <footer class="hide">
-                        <div>lalala</div>
+                        <div>Os tropeiros transportavam uma grande variedade de mercadorias como açúcar mascavo, aguardente, vinagre, vinho, azeite, bacalhau, peixe seco, queijo, manteiga, biscoito, passas, noz, farinha, gengibre, sabão, fruta seca, chouriço, salame, tecido, alfaias, marmelada, coco, carne seca, algodão, sal, vidro para janela etc.</div>
                     </footer>
                 </section>
                 <img src="tropa2.jpg"></img>
@@ -456,7 +456,7 @@
                         <a class="amore" href="#">Para saber mais...</a>
                     </article>
                     <footer class="hide">
-                        <div>lalala</div>
+                        <div>Cada comitiva era dividida em lotes de sete animais, cada um aos cuidados de um homem que os controlava através de gritos e assobios. Cada animal carregava cerca de 120 quilogramas e chegava a percorrer até 3 000 quilômetros</div>
                     </footer>
                 </section>
                 <img src="tropa2.jpg"></img>
@@ -559,6 +559,7 @@
             }
 
             document.addEventListener("keypress", function (event) {
+                if (!containClass(document.getElementById('menu-btn'), "opened"))
                 switch (event.keyCode) {
                     case 37: // left
                         if (!containClass(document.getElementById('obj2'), "hide"))
