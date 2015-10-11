@@ -15,6 +15,15 @@
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 position: relative;
+
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                cursor: default;
             }
             body > section {
                 position: absolute;
@@ -68,10 +77,9 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
-            #goto {
-                background-image: url(glyphicons-178-fast-forward.png);
-                background-repeat: no-repeat;
-                background-position: center;
+            #goto:hover {
+                background-color: initial;
+                cursor: default;
             }
             img {
                 position: absolute;
@@ -325,7 +333,7 @@
         <section id="obj1">
             <nav class="nav-navigation">
                 <ul>
-                    <li class="hide-li"><div id="backto"><a class="nav-sce-btn">#</a></div></li>
+                    <li class="hide-li"><div id="backto"><a class="nav-sce-btn" href="guiada.html">#</a></div></li>
                     <li><div class="nav-sce-location">1 de 4</div></li>
                     <li><div id="goto2"><a class="nav-sce-btn">#</a></div></li>
                 </ul>
@@ -432,7 +440,7 @@
                 <ul>
                     <li><div id="backto3"><a class="nav-sce-btn">#</a></div></li>
                     <li><div class="nav-sce-location">4 de 4</div></li>
-                    <li class="hide-li"><div id="goto"><a class="nav-sce-btn" href="fim-cenario.html">#</a></div></li>
+                    <li class="hide-li"><div id="goto"><a class="nav-sce-btn">#</a></div></li>
                 </ul>
             </nav>
             <article>
@@ -565,10 +573,6 @@
                 shouldHideFooter(3);
             });
 
-            document.getElementById('goto').addEventListener("click", function (event) {
-                document.getElementById('goto').children[0].click();
-            });
-
             document.getElementById('backto1').addEventListener("click", function (event) {
                 gofromto('obj2', 'obj1');
                 shouldHideFooter(2);
@@ -582,6 +586,10 @@
             document.getElementById('backto3').addEventListener("click", function (event) {
                 gofromto('obj4', 'obj3');
                 shouldHideFooter(4);
+            });
+
+            document.getElementById('backto').addEventListener("click", function (event) {
+                document.getElementById('backto').children[0].click();
             });
 
             document.getElementById('openclose-div').addEventListener("click", controlMenu);
