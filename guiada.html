@@ -64,7 +64,7 @@
                 width: 100px;
             }
             #backto:hover {
-                background-color: initial;
+                background-color: rgba(0, 0, 0, 0);
                 cursor: default;
             }
             #backto1, #backto2, #backto3 {
@@ -564,6 +564,29 @@
                         addClass(footer, "hide")
             }
 
+            document.addEventListener("keypress", function (event) {
+                switch (event.keyCode) {
+                    case 37: // left
+                        if (!containClass(document.getElementById('obj2'), "hide"))
+                            document.getElementById('backto1').click();
+                        else if (!containClass(document.getElementById('obj3'), "hide"))
+                            document.getElementById('backto2').click();
+                        else if (!containClass(document.getElementById('obj4'), "hide"))
+                            document.getElementById('backto3').click();
+                        break;
+                    case 39: // right
+                        if (!containClass(document.getElementById('obj2'), "hide"))
+                            document.getElementById('goto3').click();
+                        else if (!containClass(document.getElementById('obj3'), "hide"))
+                            document.getElementById('goto4').click();
+                        else if (!containClass(document.getElementById('obj1'), "hide"))
+                            document.getElementById('goto2').click();
+                        else
+                            document.getElementById('goto').click();
+                        break;
+                }
+            });
+
             document.getElementById('goto2').addEventListener("click", function (event) {
                 gofromto('obj1', 'obj2');
                 shouldHideFooter(1);
@@ -608,7 +631,6 @@
 
             var amores = document.getElementsByClassName('amore');
             for (var amore in amores) {
-                console.log(amores[amore].tagName);
                 if (amores[amore].tagName)
                 amores[amore].addEventListener("click", function (event) {
                     var a = event.target || event.srcElement;

@@ -732,6 +732,29 @@
 
             document.getElementById('menu-li2').addEventListener("click", controlCenarios);
 
+            document.addEventListener("keypress", function (event) {
+                switch (event.keyCode) {
+                    case 37: // left
+                        if (!containClass(document.getElementById('dsf2'), "hide"))
+                            document.getElementById('dsf2anterior').click();
+                        else if (!containClass(document.getElementById('dsf3'), "hide"))
+                            document.getElementById('dsf3anterior').click();
+                        else if (!containClass(document.getElementById('dsf4'), "hide"))
+                            document.getElementById('dsf4anterior').click();
+                        break;
+                    case 39: // right
+                        if (!containClass(document.getElementById('dsf2'), "hide"))
+                            document.getElementById('dsf2proximo').click();
+                        else if (!containClass(document.getElementById('dsf3'), "hide"))
+                            document.getElementById('dsf3proximo').click();
+                        else if (!containClass(document.getElementById('dsf1'), "hide"))
+                            document.getElementById('dsf1proximo').click();
+                        else
+                            document.getElementById('goto').click();
+                        break;
+                }
+            });
+
             document.getElementById('dsf1alternativa1').addEventListener("click", function (event) {
                 var target = event.target || event.srcElement;
                 var parent = target.parentNode;

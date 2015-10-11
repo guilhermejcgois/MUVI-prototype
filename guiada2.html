@@ -78,7 +78,7 @@
                 background-position: center;
             }
             #goto:hover {
-                background-color: initial;
+                background-color: rgba(0, 0, 0, 0);
                 cursor: default;
             }
             img {
@@ -557,6 +557,31 @@
                     if (!containClass(footer, "hide"))
                         addClass(footer, "hide")
             }
+
+            document.addEventListener("keypress", function (event) {
+                switch (event.keyCode) {
+                    case 37: // left
+                        if (!containClass(document.getElementById('obj2'), "hide"))
+                            document.getElementById('backto1').click();
+                        else if (!containClass(document.getElementById('obj3'), "hide"))
+                            document.getElementById('backto2').click();
+                        else if (!containClass(document.getElementById('obj4'), "hide"))
+                            document.getElementById('backto3').click();
+                        else
+                            document.getElementById('backto').click();
+                        break;
+                    case 39: // right
+                        if (!containClass(document.getElementById('obj2'), "hide"))
+                            document.getElementById('goto3').click();
+                        else if (!containClass(document.getElementById('obj3'), "hide"))
+                            document.getElementById('goto4').click();
+                        else if (!containClass(document.getElementById('obj1'), "hide"))
+                            document.getElementById('goto2').click();
+                        else
+                            document.getElementById('goto').click();
+                        break;
+                }
+            });
 
             document.getElementById('goto2').addEventListener("click", function (event) {
                 gofromto('obj1', 'obj2');
